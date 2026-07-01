@@ -1,0 +1,32 @@
+@if (eventoSeleccionado) {
+  <div class="container">
+    
+    <div class="arriba">
+      <div class="info-arriba">
+        <div><strong>TITULO : </strong> {{ eventoSeleccionado.titulo }}</div>
+        <div><strong>LUGAR : </strong> {{ eventoSeleccionado.lugar }}</div>
+        <div><strong>FECHA : </strong> {{ eventoSeleccionado.fecha }}</div>
+        <div><strong>HORA : </strong> {{ eventoSeleccionado.hora }}</div>
+      </div>
+      <img src="/aqui.jpeg" alt="Imagen del evento"/>
+    </div>
+
+    <div class="abajo">
+      <div class="program">PROGRAMACIÓN</div>
+      <div class="info-abajo">
+        @if (eventoSeleccionado.evento_1) { <div>{{ eventoSeleccionado.evento_1 }}</div> }
+        @if (eventoSeleccionado.evento_2) { <div>{{ eventoSeleccionado.evento_2 }}</div> }
+        @if (eventoSeleccionado.evento_3) { <div>{{ eventoSeleccionado.evento_3 }}</div> }
+        @if (eventoSeleccionado.evento_4) { <div>{{ eventoSeleccionado.evento_4 }}</div> }
+        @if (eventoSeleccionado.evento_5) { <div>{{ eventoSeleccionado.evento_5 }}</div> }
+        @if (eventoSeleccionado.evento_6) { <div>{{ eventoSeleccionado.evento_6 }}</div> }
+        @if (eventoSeleccionado.evento_7) { <div>{{ eventoSeleccionado.evento_7 }}</div> }
+      </div>
+    </div>
+
+  </div>
+} @else {
+  <div class="cargando">
+    <p>No se seleccionó ningún evento. Por favor, regresa a la cartelera principal.</p>
+  </div>
+}

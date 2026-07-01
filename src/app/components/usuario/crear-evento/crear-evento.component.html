@@ -1,0 +1,63 @@
+<form class="formulario-eventos" [formGroup]="eventoForm" (ngSubmit)="enviarEvento()">
+  <div class="container">
+    <div class="bloque">
+      
+      <div class="grupo-campo">
+        <label>CORREO ELECTRÓNICO :</label>
+        <input type="email" formControlName="correo" readonly style="background-color: #e9ecef; cursor: not-allowed;">
+      </div>
+
+      <div class="grupo-campo">
+        <label>TÍTULO :</label>
+        <input type="text" formControlName="titulo" placeholder="Introduce el título">
+      </div>
+      <div class="grupo-campo">
+        <label>LUGAR :</label>
+        <input type="text" formControlName="lugar" placeholder="Lugar del evento">
+      </div>
+      <div class="grupo-campo">
+        <label>FECHA :</label>
+        <input type="text" formControlName="fecha">
+      </div>
+      <div class="grupo-campo">
+        <label>HORA :</label>
+        <input type="text" formControlName="hora">
+      </div>
+      <div class="grupo-campo">
+        <label>EVENTO 1 :</label>
+        <input type="text" formControlName="evento_1">
+      </div>
+      <div class="grupo-campo">
+        <label>EVENTO 2 :</label>
+        <input type="text" formControlName="evento_2">
+      </div>
+    </div>
+    
+    <div class="bloque">
+      <div class="grupo-campo">
+        <label>EVENTO 3 :</label>
+        <input type="text" formControlName="evento_3">
+      </div>
+      <div class="grupo-campo">
+        <label>EVENTO 4 :</label>
+        <input type="text" formControlName="evento_4">
+      </div>
+      <div class="grupo-campo">
+        <label>EVENTO 5 :</label>
+        <input type="text" formControlName="evento_5">
+      </div>
+      <div class="grupo-campo">
+        <label>EVENTO 6 :</label>
+        <input type="text" formControlName="evento_6">
+      </div>
+      <div class="grupo-campo">
+        <label>EVENTO 7 :</label>
+        <input type="text" formControlName="evento_7">
+      </div>
+    </div>
+  </div>
+  
+  <div class="contenedor-boton">
+    <input class="boton-enviar" type="submit" value="Enviar">
+  </div>
+</form>

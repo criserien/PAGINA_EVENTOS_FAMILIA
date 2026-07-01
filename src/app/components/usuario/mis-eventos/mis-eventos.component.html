@@ -1,0 +1,24 @@
+<div class="contenedor-eventos">
+  <div 
+    *ngFor="let evento of listaEventos; trackBy: trackByFn" 
+    [routerLink]="['/panel-usuario', 'mis-eventos-formato']" 
+    [state]="{ infoEvento: evento }" 
+    class="imagenes"
+  >
+    <div class="arriba">
+      <div class="fecha">
+        <div class="dia">{{ evento.fecha }}</div>
+      </div>
+    </div>
+    
+    <div class="abajo">
+      <div class="detalles"><strong>Evento:</strong> {{ evento.titulo }}</div>
+      <div class="detalles"><strong>Lugar:</strong> {{ evento.lugar }}</div>
+      <div class="detalles"><strong>Hora:</strong> {{ evento.hora }}</div>
+      
+      <button class="btn-eliminar" (click)="eliminarEvento($event, evento)">
+        Eliminar
+      </button>
+    </div>
+  </div>
+</div>

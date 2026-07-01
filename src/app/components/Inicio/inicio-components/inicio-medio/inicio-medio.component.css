@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/* --- NUEVA CLASE PADRE --- */
+.contenedor-eventos {
+    display: flex;
+    flex-direction: row; /* Alinea los elementos a la derecha (en fila) */
+    flex-wrap: wrap;     /* Si se llena la fila, los siguientes bajan */
+    gap: 20px;           /* Separación horizontal y vertical entre tarjetas */
+    padding: 20px;       /* Espaciado interno opcional */
+    justify-content: center; /* Los alinea al principio (izquierda a derecha) */
+}
+
+/* --- TUS ESTILOS MODIFICADOS --- */
+.imagenes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* gap: 20px;  <- Opcional: quitamos o reducimos este gap si separaba mucho el texto de la imagen */
+    width: 20vw;
+    border: 1px solid rgba(92, 88, 88, 0.822);
+    border-radius: 10px;
+    cursor: pointer;
+    box-sizing: border-box; /* Evita que el borde altere el tamaño real */
+}
+
+.arriba {
+    background-image: url("/aqui.jpeg");
+    background-size: cover; /* Asegura que la imagen de fondo cubra bien el espacio */
+    background-position: center;
+    width: 100%; /* Cambiado a 100% para que herede el ancho de .imagenes */
+    height: 15vh;
+    border-top-left-radius: 10px; /* Bordes redondeados solo arriba */
+    border-top-right-radius: 10px;
+}
+
+.abajo {
+    padding-bottom: 2vh;
+    padding-top: 1vh;
+}
+
+.fecha {
+    background-color: white;
+    width: 7vw;
+    text-align: center;
+    height: 6vh;
+    margin-top: 2vh;
+    margin-left: 1.2vw;
+    border-radius: 10px;
+    padding-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detalles {
+    margin-left: 1.2vw;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .imagenes {
+        width: 42vw; /* Ajustado ligeramente por si manejas márgenes */
+    }
+    /* .arriba ya no necesita ancho aquí porque tiene width: 100% */
+    .fecha {
+        width: 27vw;
+        height: 8vh;
+    }
+}

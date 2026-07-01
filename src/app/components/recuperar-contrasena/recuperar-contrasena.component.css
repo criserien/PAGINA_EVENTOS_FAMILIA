@@ -1,0 +1,199 @@
+/* Importar fuente moderna desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Fondo cambiado a una elegante transición de azules oscuros y profundos */
+    background: linear-gradient(135deg, #0f172a, #0f2b5c, #074799);
+    color: #f8fafc;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+}
+
+.form-box {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #94a3b8;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+}
+
+.input-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-field i {
+    position: absolute;
+    left: 16px;
+    color: #94a3b8;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 14px 16px 14px 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    outline: none;
+    font-size: 14px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Efecto Focus - Ahora en un azul brillante e iluminado */
+.input-field input:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #38bdf8; /* Azul cielo brillante */
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+.input-field input:focus + i, 
+.input-field input:focus ~ i {
+    color: #38bdf8;
+}
+
+/* Estilos para el checkbox */
+.terms {
+    margin: 20px 0;
+}
+
+.terms label {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #cbd5e1;
+    cursor: pointer;
+}
+
+.terms input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+
+.terms input[type="checkbox"]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #0084ff; /* Check azul */
+    transform-origin: center;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.terms input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+.terms input[type="checkbox"]:checked {
+    border-color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+}
+
+.terms a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+/* Botón de Registro - Degradado de Azul Eléctrico a Azul Real */
+.btn-register {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #0084ff, #0052cc);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 132, 255, 0.3);
+}
+
+.btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 132, 255, 0.45);
+    background: linear-gradient(135deg, #1a91ff, #0066ff);
+}
+
+.btn-register:active {
+    transform: translateY(0);
+}
+
+/* Enlace inferior */
+.login-link {
+    text-align: center;
+    font-size: 14px;
+    color: #94a3b8;
+    margin-top: 25px;
+}
+
+.login-link a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

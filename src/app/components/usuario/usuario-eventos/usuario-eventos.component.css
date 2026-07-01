@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.item {
+    background-color: #f0f0f0;
+    padding: 15px;
+    display: flex;
+    gap: 2vw;
+    width: 11vw;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .item {
+        width: 22vw;
+    }
+}

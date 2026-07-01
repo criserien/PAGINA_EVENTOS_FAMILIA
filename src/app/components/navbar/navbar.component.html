@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <img src="familia_log.jpeg" alt="logo familia">
+  <div class="menu-opciones">
+    <div class="cajas" [routerLink]="['/']"><a>Inicio</a></div>
+    <div class="cajas" [routerLink]="['/eventos']">Eventos</div>
+    <div class="cajas prueba">Cómo funciona</div>
+    <div class="cajas prueba">Sobre nosotros</div>
+    <div class="cajas prueba">Contacto</div>
+  </div>
+  <div class="menu-usuario">
+    <button class="menu-botones" [routerLink]="['/inicio-sesion']">Iniciar sesión</button>
+    <button class="menu-botones registro" [routerLink]="['/registro']">Registrarse</button>
+  </div>
+</nav>

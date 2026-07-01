@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Una fuente más limpia */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinea verticalmente el logo, opciones y botones */
+    padding: 1rem 2vw;  /* Un colchón interno para que no pegue a los bordes de la pantalla */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil para darle profundidad */
+    background-color: #ffffff;
+}
+
+/* --- CONTENEDOR DE OPCIONES --- */
+.menu-opciones {
+    display: flex;
+    gap: 3vw; /* Ajustado un poco para que no se disperse tanto en pantallas gigantes */
+}
+
+/* --- ESTILO DE LAS OPCIONES (Efecto Moderno) --- */
+.cajas {
+    position: relative; /* Necesario para posicionar la línea animada */
+    cursor: pointer;
+    padding: 0.5rem 0;
+    color: #333333;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Transición suave para el color del texto */
+}
+
+/* Cambio de color al pasar el mouse */
+.cajas:hover {
+    color: #265ccf; /* Usa el mismo azul de tu botón de registro para mantener consistencia */
+}
+
+/* La línea interactiva que aparece abajo */
+.cajas::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0); /* Empieza invisible (escala en 0) */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #265ccf;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out; /* Animación de la línea */
+}
+
+/* Al hacer hover, la línea se expande */
+.cajas:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Asegurar que el enlace interno herede el estilo y no se vea azul/subrayado por defecto */
+.cajas a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* --- BOTONES DE USUARIO --- */
+.menu-usuario {
+    display: flex;
+    align-items: center;
+    gap: 1vw; /* Espaciado moderno entre botones en vez de margin-right */
+}
+
+.menu-botones {
+    cursor: pointer;
+    padding: 0.8rem 1.5rem; /* Padding más estándar en vez de vh/vw para botones */
+    border: 1px solid #265ccf;
+    border-radius: 6px; /* Bordes ligeramente redondeados, muy de hoy en día */
+    background: transparent;
+    color: #265ccf;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover para botón Iniciar Sesión */
+.menu-botones:not(.registro):hover {
+    background-color: rgba(38, 92, 207, 0.05);
+}
+
+.registro {
+    background-color: #265ccf;
+    color: white;
+}
+
+/* Efecto hover para botón Registrarse */
+.registro:hover {
+    background-color: #1d4db3; /* Un azul un poco más oscuro al pasar el mouse */
+}
+
+/* --- LOGO --- */
+img {
+    max-height: 60px; /* Es mejor controlar el alto máximo del navbar con el logo */
+    width: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    /* Hacemos que la barra principal se divida en filas para dar espacio */
+    .navbar {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* ¡AQUÍ ESTÁ! Logo más grande y con ancho automático para que no se deforme */
+    img {
+        max-height: 90px; /* Le subimos el tamaño para que se vea imponente en cel */
+        width: auto;
+    }
+
+    /* Ocultamos las opciones secundarias */
+    .prueba {
+        display: none; 
+    }
+
+    /* Centramos las opciones que quedan (Inicio, Eventos) */
+    .menu-opciones {
+        justify-content: center;
+        gap: 8vw; 
+        width: 100%;
+    }
+
+    /* Los botones de usuario abajo y bien distribuidos */
+    .menu-usuario {
+        width: 100%;
+        justify-content: center;
+        gap: 4vw;
+    }
+
+    /* Botones cómodos para pantallas táctiles */
+    .menu-botones {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}

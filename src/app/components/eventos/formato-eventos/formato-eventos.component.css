@@ -1,0 +1,76 @@
+/* 1. Regla global importantísima para que los tamaños sean exactos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 25vw;
+    height: 30vh;
+    border-radius: 10px;
+    display: block; /* Evita espacios extraños debajo de la imagen */
+    border: 1px solid black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+    margin-left: 15vw;
+    width: 70vw;
+    height: 70vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden; /* Corta cualquier cosa que intente salirse de las esquinas redondeadas */
+}
+
+.arriba {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centra las imágenes verticalmente dentro de .arriba */
+    background-color: #373897;
+    width: 100%; /* Ocupa el 100% del contenedor padre (los 70vw) */
+    height: 35vh;
+    align-items: flex-start;
+    
+    /* En lugar de margin, usamos padding para dar espacio a las imágenes */
+    padding-top: 5vh;    /* Reemplaza tu margin-top */
+    padding-inline: 5vw; /* Agrega 5vw de espacio a la izquierda Y a la derecha */
+}
+
+.info-arriba{
+    background-color: white;
+    padding: 2vh;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.abajo {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Cambiado a 100% para que herede limpiamente el ancho del padre */
+    height: 35vh;
+    background-color: #373897;
+}
+
+.program {
+    text-align: center;
+    padding: 1vh;
+    background-color: #8d8eb6;
+}
+
+.info-abajo {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    padding-top: 3vh;
+    padding-left: 1.5vw;
+    width: 50vw;
+    margin-inline: 4.5vw; /* Centrado horizontal perfecto */
+    margin-bottom: auto; /* Centrado vertical respecto al espacio que sobra abajo */
+}

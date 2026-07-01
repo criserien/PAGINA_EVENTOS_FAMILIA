@@ -1,0 +1,82 @@
+/* Contenedor principal del formulario */
+.formulario-eventos {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 30px;
+    max-width: 900px;
+}
+
+/* Alineación de los dos bloques en paralelo */
+.container {
+    display: flex;
+    gap: 60px; /* Espacio entre columnas */
+}
+
+/* Cada una de las dos columnas */
+.bloque {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio vertical entre campos */
+}
+
+/* Estructura interna de cada fila (Etiqueta + Input) */
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Estilo de los textos/etiquetas */
+.grupo-campo label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    letter-spacing: 0.5px;
+}
+
+/* Estilo moderno para los inputs */
+.grupo-campo input {
+    padding: 10px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px; /* Bordes suaves */
+    font-size: 14px;
+    background-color: #ffffff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Efecto visual cuando el usuario hace clic en un input */
+.grupo-campo input:focus {
+    border-color: #0056c6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 86, 198, 0.15);
+}
+
+/* Contenedor para separar y alinear el botón */
+.contenedor-boton {
+    margin-top: 30px;
+}
+
+/* Botón enviar con el mismo estilo que "Registrarse" */
+.boton-enviar {
+    background-color: #0056c6; /* El azul de tu cabecera */
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Efecto al pasar el ratón por encima del botón */
+.boton-enviar:hover {
+    background-color: #004195;
+}
+
+.boton-enviar:active {
+    transform: scale(0.98);
+}

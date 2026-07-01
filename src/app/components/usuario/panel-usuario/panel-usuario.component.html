@@ -1,0 +1,13 @@
+<body>
+<div class="container">
+<aside>
+  <div class="menu-item" [routerLink]="['datos']" routerLinkActive="activo">datos</div>
+  <div class="menu-item" [routerLink]="['eventos']" routerLinkActive="activo">eventos</div>
+  <div class="menu-item" [routerLink]="['/inicio-sesion']">Salir</div>
+</aside>
+    <section>
+      <!-- Aquí Angular pondrá dinámicamente DatosUsuarioComponent o EventosComponent -->
+      <router-outlet></router-outlet>
+    </section>
+</div>
+</body>

@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("/fondo.jpeg");
+    background-size: cover;
+    width: 100%;
+    padding-top: 5vh;
+    padding-left: 2vw;
+    padding-bottom: 5vh;
+}
+
+.titulo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #0c0eac;
+    margin-bottom: 20px;
+}
+
+.titulo-2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.titulo-3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #0c0eac;
+    margin-bottom: 20px;
+}
+
+.titulo-4 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.menu-botones {
+    margin-right: 3vw;
+    height: 7vh;
+    padding: 0.5vh 1vw;
+    background-color: #265ccf;
+    color: white;
+}

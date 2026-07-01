@@ -1,0 +1,61 @@
+@if (eventoSeleccionado) {
+  <div class="container">
+    
+    <div class="arriba">
+      <div class="info-arriba">
+        <div><strong>TITULO :</strong> {{ eventoSeleccionado.titulo }}</div>
+        <div><strong>LUGAR :</strong> {{ eventoSeleccionado.lugar }}</div>
+        <div><strong>FECHA :</strong> {{ eventoSeleccionado.fecha }}</div>
+        <div><strong>HORA :</strong> {{ eventoSeleccionado.hora }}</div>
+      </div>
+      
+      <img [src]="imagenActual || '/aqui.jpeg'" alt="Imagen del evento"/>
+    </div>
+
+    <div class="abajo">
+      <div class="program">PROGRAMACIÓN</div>
+      <div class="info-abajo">
+        @if (eventoSeleccionado.evento_1) { <div>{{ eventoSeleccionado.evento_1 }}</div> }
+        @if (eventoSeleccionado.evento_2) { <div>{{ eventoSeleccionado.evento_2 }}</div> }
+        @if (eventoSeleccionado.evento_3) { <div>{{ eventoSeleccionado.evento_3 }}</div> }
+        @if (eventoSeleccionado.evento_4) { <div>{{ eventoSeleccionado.evento_4 }}</div> }
+        @if (eventoSeleccionado.evento_5) { <div>{{ eventoSeleccionado.evento_5 }}</div> }
+        @if (eventoSeleccionado.evento_6) { <div>{{ eventoSeleccionado.evento_6 }}</div> }
+        @if (eventoSeleccionado.evento_7) { <div>{{ eventoSeleccionado.evento_7 }}</div> }
+      </div>
+    </div>
+
+  </div>
+} @else {
+  <div class="cargando">
+    <p>No se seleccionó ningún evento. Por favor, regresa a la cartelera principal.</p>
+  </div>
+}
+
+<hr style="margin: 30px 0; border: 0; border-top: 1px solid #ccc;">
+
+<div style="text-align: center; margin-top: 20px; font-weight: bold;">IMÁGENES DEL EVENTO</div>
+<div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 15px;">
+  <div>SUBIR IMAGEN DEL EVENTO:</div>
+  <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+  
+  <button (click)="onUpload()" [disabled]="!selectedFile || cargando">
+    {{ cargando ? 'Subiendo...' : 'Subir Imagen' }}
+  </button>
+</div>
+
+<div class="galeria-contenedor" style="margin-top: 40px; padding: 20px;">
+  <h3 style="text-align: center; margin-bottom: 20px;">Galería de Fotos</h3>
+  
+  @if (imagenesCarpeta.length > 0) {
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; justify-items: center;">
+      @for (url of imagenesCarpeta; track url) {
+        <div class="tarjeta-foto" style="box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; background: #fff;">
+          <img [src]="url" alt="Foto del evento" style="width: 200px; height: 150px; object-fit: cover; display: block;" />
+        </div>
+      }
+    </div>
+  } @else {
+    <p style="text-align: center; color: #777; font-style: italic;">Aún no hay fotos subidas para este evento. ¡Sé el primero en subir una!</p>
+  }
+</div>

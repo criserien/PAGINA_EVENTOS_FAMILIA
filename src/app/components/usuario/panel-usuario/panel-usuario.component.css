@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Estilos Globales y Contenedor Principal
+   ========================================================================== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh; /* Ocupa todo el alto de la pantalla */
+}
+
+/* ==========================================================================
+   Menú Lateral (Aside)
+   ========================================================================== */
+aside {
+    width: 10vw; /* Ancho fijo para que no se deforme en pantallas grandes o chicas */
+    background-color: #4f46e5; /* Azul índigo moderno */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil a la derecha */
+    margin-right: 2vw;
+}
+
+/* Opciones individuales del menú */
+.menu-item {
+    display: flex;
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center;     /* Centra el texto verticalmente */
+    
+    height: 3rem;            /* Altura fija para notar el centrado vertical */
+    padding: 0 1.2rem;       
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-radius: 8px;      /* Bordes redondeados sutiles */
+    cursor: pointer;
+    text-transform: capitalize; /* Primera letra en mayúscula automáticamente */
+    
+    /* Transición suave para todos los cambios visuales (color, tamaño, etc.) */
+    transition: all 0.25s ease-in-out; 
+}
+
+/* === Efectos Interactivos para el Menú === */
+
+/* Al pasar el mouse por encima (Hover) */
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Reflejo blanco semitransparente */
+    transform: scale(1.03); /* Efecto de lupa/acercamiento simétrico */
+}
+
+/* Opción activa (Sección actual donde está el usuario) */
+.menu-item.activo {
+    background-color: #ffffff;
+    color: #4f46e5; /* El texto toma el color del fondo del panel */
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón de Salir (Efecto especial en rojo) */
+.menu-item[routerLink="/inicio-sesion"]:hover {
+    background-color: #ef4444; /* Rojo suave */
+    color: white;
+    transform: scale(1.03);
+}
+
+/* ==========================================================================
+   Sección de Contenido Dinámico (Section)
+   ========================================================================== */
+section {
+    flex: 1; /* Ocupa automáticamente todo el ancho restante de la pantalla */
+    background-color: #a7cfcd; /* Fondo blanco limpio para el área de trabajo */
+    padding-top: 5vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Estilo para las cajas de datos (Usuario, Correo, Contraseña, etc.) */
+section div {
+    background-color: #f8fafc; /* Fondo gris muy claro */
+    padding: 1.2rem;
+    border-radius: 6px;
+    border-left: 4px solid #4f46e5; /* Línea decorativa lateral con el azul del menú */
+    font-size: 1.05rem;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    aside {
+        width: 15vw;
+    }
+}
