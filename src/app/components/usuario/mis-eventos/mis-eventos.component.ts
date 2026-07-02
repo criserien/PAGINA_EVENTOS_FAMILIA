@@ -50,7 +50,7 @@ export class MisEventosComponent implements OnInit {
   }
   
   private cargarEventos(): void {
-    const urlFiltrada = `https://localhost:7189/api/eventos/${this.correoUsuario}`;
+    const urlFiltrada = `https://proyecto-eventos-familia.onrender.com/api/eventos/${this.correoUsuario}`;
     this.http.get<Evento[]>(urlFiltrada).subscribe({
       next: (data) => {
         this.listaEventos = data;
@@ -70,7 +70,7 @@ export class MisEventosComponent implements OnInit {
     const confirmar = confirm(`¿Estás seguro de que deseas eliminar el evento "${evento.titulo}"?`);
     if (!confirmar) return;
 
-    const urlDelete = `https://localhost:7189/api/eventos/${evento.id}`;
+    const urlDelete = `https://proyecto-eventos-familia.onrender.com/api/eventos/${evento.id}`;
 
     this.http.delete(urlDelete).subscribe({
       next: (res) => {

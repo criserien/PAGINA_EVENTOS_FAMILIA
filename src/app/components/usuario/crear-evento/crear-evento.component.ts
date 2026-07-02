@@ -13,7 +13,7 @@ import { LoginService } from '../../../servicios/login.service';
 export class CrearEventoComponent implements OnInit {
   
   eventoForm!: FormGroup;
-  private apiUrl = 'https://localhost:7189/api/eventos';
+  private apiUrl = 'https://proyecto-eventos-familia.onrender.com/api/eventos';
 
   constructor(
     private fb: FormBuilder,
