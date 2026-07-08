@@ -15,7 +15,7 @@ export interface UserResponse {
 export class LoginService {
   usuarioLogueado: any = null;
   // 1. Dejamos la URL base limpia sin variables sueltas
-  private apiUrl = 'https://proyecto-eventos-familia.onrender.com/api/usuarios'; 
+  private apiUrl = 'https://back-eventos-familia-net.onrender.com/api/usuarios'; 
 
   constructor(private http: HttpClient) {}
 

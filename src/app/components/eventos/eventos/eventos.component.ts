@@ -34,7 +34,7 @@ export class EventosComponent implements OnInit {
   public listaEventos: Evento[] = [];
   
   // URL de tu API
-  private apiUrl = 'https://proyecto-eventos-familia.onrender.com/api/eventos'; 
+  private apiUrl = 'https://back-eventos-familia-net.onrender.com/api/eventos'; 
 
   constructor(private http: HttpClient) { }
 
